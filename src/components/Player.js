@@ -1,4 +1,4 @@
-import { act, useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useSphere } from "@react-three/cannon";
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
@@ -8,7 +8,7 @@ const JUMP_FORCE = 4;
 const SPEED = 4;
 
 export const Player = () => {
-  const { moveBackward, moveForvard, moveLeft, moveRight, jump } = useKeyboard();
+  const { moveBackward, moveForward, moveLeft, moveRight, jump } = useKeyboard();
   // console.log(
   //   "actions",
   //   Object.entries(actions).filter(([k, v]) => v)
@@ -37,7 +37,7 @@ export const Player = () => {
 
     const direction = new Vector3();
 
-    const frontVector = new Vector3(0, 0, (moveBackward ? 1 : 0) - (moveBackward ? 1 : 0));
+    const frontVector = new Vector3(0, 0, (moveBackward ? 1 : 0) - (moveForward ? 1 : 0));
 
     const sideVector = new Vector3((moveLeft ? 1 : 0) - (moveRight ? 1 : 0), 0, 0);
 

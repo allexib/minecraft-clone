@@ -21,7 +21,7 @@ export const TextureSelector = () => {
   useEffect(() => {
     const pressedTexture = Object.entries(textures).find(([k, v]) => v);
     if (pressedTexture) {
-      console.log("pressed", pressedTexture);
+    //   console.log("pressed", pressedTexture);
       setTexture(pressedTexture[0]);
     }
   }, [setTexture, dirt, grass, glass, wood, log]);

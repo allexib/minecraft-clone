@@ -30,13 +30,17 @@ export const useStore = create((set) => ({
   removeCube: (x, y, z) => {
     // console.log('remove',x,y,z)
     set((prev) => ({
-      cubes: prev.cubes.filter(cube => {
+      cubes: prev.cubes.filter((cube) => {
         const [X, Y, Z] = cube.pos;
         return X !== x || Y !== y || Z !== z;
       }),
     }));
   },
-  setTexture: () => {},
+  setTexture: (texture) => {
+    set(() => ({
+      texture,
+    }));
+  },
   saveWorld: () => {},
   resetWorld: () => {},
 }));

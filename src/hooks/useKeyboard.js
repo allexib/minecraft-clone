@@ -23,11 +23,11 @@ export const useKeyboard = () => {
     moveLeft: false,
     moveRight: false,
     jump: false,
-    texture1: false,
-    texture2: false,
-    texture3: false,
-    texture4: false,
-    texture5: false,
+    dirt: false,
+    grass: false,
+    glass: false,
+    wood: false,
+    log: false,
   });
   const handleKeyDown = useCallback((e) => {
     console.log(e);
@@ -61,6 +61,7 @@ export const useKeyboard = () => {
       document.addEventListener("keyup", handleKeyUp);
     };
   }, [handleKeyDown, handleKeyUp]);
+  
 
   return actions;
 };
